@@ -1,6 +1,6 @@
-CREATE DATABASE newsapi;
+CREATE DATABASE news;
 
-\c newsapi
+\c news
 
 CREATE TABLE news(
     id SERIAL PRIMARY KEY,
@@ -11,9 +11,9 @@ CREATE TABLE news(
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
-    userName VARCHAR,
+    name VARCHAR,
     userPosition VARCHAR,
-    userRole VARCHAR,
+    role VARCHAR,
     departmentId INTEGER
 );
 
