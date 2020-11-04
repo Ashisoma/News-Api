@@ -34,13 +34,13 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/generalNews", (request, response) -> {
-            model.put("generalNews", sql2oGeneralNews.getAllGeneralNews());
-            return new ModelAndView(model, "generalnews.hbs");
-        }, new HandlebarsTemplateEngine());
+//        get("/generalNews", (request, response) -> {
+//            model.put("generalNews", sql2oGeneralNews.getAllGeneralNews());
+//            return new ModelAndView(model, "generalnews.hbs");
+//        }, new HandlebarsTemplateEngine());
 
         get("/add-generalNews", (request, response) -> {
-            model.put("general", sql2oGeneralNews.getAllGeneralNews());
+            model.put("generalNews", sql2oGeneralNews.getAllGeneralNews());
             return new ModelAndView(model, "general-news-form.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -49,13 +49,13 @@ public class App {
             String content = req.queryParams("content");
             GeneralNews generalNews = new GeneralNews(title, content);
             sql2oGeneralNews.add(generalNews);
-            model.put("general", sql2oGeneralNews.getAllGeneralNews());
+            model.put("generalNews", sql2oGeneralNews.getAllGeneralNews());
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/add-users", (request, response) -> {
             model.put("users", sql2oUser.getAllUser());
-            return new ModelAndView(model, "general-news-form.hbs");
+            return new ModelAndView(model, "user-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/add-users",(req,res)->{

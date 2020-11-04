@@ -13,6 +13,17 @@
             <label for="formGroupExampleInput2">Role</label>
             <input type="text" class="form-control" id="role" name="role" placeholder="Role">
         </div>
+        <div class="form-group">
+            <label for="squad">Department</label>
+            <select class="form-control" id="department" name="department">
+                {{#if department}}
+                    {{#each department}}
+                        <option value="{{id}}">{{departmentName}}</option>
+                    {{/each}}
+                {{/if}}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
     </form>
 
 {{/partial}}

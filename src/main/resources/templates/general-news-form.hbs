@@ -1,14 +1,14 @@
 {{#partial "content"}}
-
+<h1>Add General News</h1>
     <div class="form-group">
-        <form action="/add-generalNews" method="post" >
+        <form action="/add-generalNews" method="Post" >
             <div class="form-group">
                 <label for="formGroupExampleInput">Title</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Title">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Content</label>
-                <textarea type="text" class="form-control" id="content" name="content" placeholder="Content"></textarea>
+                <textarea class="form-control" id="content" name="content" placeholder="Content"></textarea>
             </div>
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>

@@ -21,7 +21,7 @@ public class Sql2oDepartment implements DepartmentDao{
     public void add(Department department) {
         String sql = "INSERT INTO departments (departmentName, description) VALUES (:departmentName, :description)";
         try (Connection con = sql2o.open()){
-            int id = (int) con.createQuery(sql)
+            int id = (int) con.createQuery(sql, true)
                     .bind(department)
                     .executeUpdate()
                     .getKey();
@@ -33,7 +33,7 @@ public class Sql2oDepartment implements DepartmentDao{
     public List<Department> getAllDepartments() {
         String sql = "SELECT * FROM departments";
         try (Connection con = sql2o.open()){
-            return con.createQuery(sql)
+            return con.createQuery(sql, true)
               .executeAndFetch(Department.class);
         }catch (Sql2oException ex){
             System.out.println(ex);

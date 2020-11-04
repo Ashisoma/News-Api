@@ -19,12 +19,14 @@ public class Sql2oGeneralNews implements GeneralNewsDao {
     public void add(GeneralNews generalNews) {
         String sql = "INSERT INTO news (title, content) VALUES (:title, :content)";
         try (Connection con = sql2o.open()){
-            int id = (int) con.createQuery(sql)
+            int id = (int) con.createQuery(sql, true)
                     .throwOnMappingFailure(false)
                     .bind(generalNews)
                     .executeUpdate()
                     .getKey();
             generalNews.setId(id);
+        }catch (Sql2oException ex) {
+            System.out.println(ex);
         }
     }
 

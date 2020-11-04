@@ -34,7 +34,7 @@ public class Sql2oDepartmentNews implements DepartmentNewsDao{
     public List<DepartmentNews> getAllDepartmentNews() {
         String sql = "SELECT * FROM news WHERE departmentId <> ''";
         try (Connection con = sql2o.open()){
-            return con.createQuery(sql)
+            return con.createQuery(sql, true)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(DepartmentNews.class);
         }catch (Sql2oException ex){

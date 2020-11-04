@@ -20,7 +20,7 @@ public class Sql2oUser implements UserDao {
     public void add(User user) {
         String sql = "INSERT INTO users (userName, userPosition, userRole) VALUES (:userName, :userPosition, :userRole)";
         try (Connection con = sql2o.open()){
-            int id = (int) con.createQuery(sql)
+            int id = (int) con.createQuery(sql, true)
                     .throwOnMappingFailure(false)
                     .bind(user)
                     .executeUpdate()

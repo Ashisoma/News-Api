@@ -6,7 +6,7 @@ CREATE TABLE news(
     id SERIAL PRIMARY KEY,
     title VARCHAR,
     content VARCHAR,
-    departmentId INTEGER
+    departmentId VARCHAR
 );
 
 CREATE TABLE users(
@@ -14,7 +14,7 @@ CREATE TABLE users(
     name VARCHAR,
     userPosition VARCHAR,
     role VARCHAR,
-    departmentId INTEGER
+    departmentId VARCHAR
 );
 
 CREATE TABLE departments(
