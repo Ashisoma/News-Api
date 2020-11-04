@@ -1,4 +1,37 @@
 {{#partial "content"}}
 
+    <div class="form-group">
+        <form action="/add-department-news" method="post" >
+            <div class="form-group">
+                <label for="formGroupExampleInput">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Content</label>
+                <input type="text" class="form-control" id="content" name="content" placeholder="Content">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Department</label>
+                <input type="text" class="form-control" id="weakness" name="weakness" placeholder="Weakness">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Age</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="age">
+            </div>
+            <div class="form-group">
+                <label for="squad">Department</label>
+                <select class="form-control" id="department" name="department">
+                    {{#if departments}}
+                        {{#each departments}}
+                            <option value="{{id}}">{{departmentName}}</option>
+                        {{/each}}
+                    {{/if}}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </form>
+    </div>
+    </div>
+
 {{/partial}}
 {{>layout.hbs}}

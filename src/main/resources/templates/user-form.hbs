@@ -1,4 +1,19 @@
 {{#partial "content"}}
 
+    <form action="/add-users" method="post" >
+        <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Position</label>
+            <input type="text" class="form-control" id="position" name="position" placeholder="Position">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Role</label>
+            <input type="text" class="form-control" id="role" name="role" placeholder="Role">
+        </div>
+    </form>
+
 {{/partial}}
 {{>layout.hbs}}
