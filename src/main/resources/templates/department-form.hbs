@@ -1,18 +1,14 @@
 {{#partial "content"}}
 
     <div class="form-group">
-        <form action="/add-hero" method="post" >
+        <form action="/add-department" method="post" >
             <div class="form-group">
-                <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                <label for="formGroupExampleInput">Name</label>
+                <input type="text" class="form-control" id="name" name="title" placeholder="name">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Content</label>
-                <textarea type="text" class="form-control" id="content" name="content" placeholder="Content"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput2">Content</label>
-                <input type="text" class="form-control" id="departmentId" name="content" placeholder="Department">
+                <label for="formGroupExampleInput2">Description</label>
+                <textarea type="text" class="form-control" id="description" name="description" placeholder="Content"></textarea>
             </div>
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>
