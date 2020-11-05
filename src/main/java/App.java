@@ -22,6 +22,7 @@ public class App {
 
         String connectionString = "jdbc:postgresql://localhost:5432/news";
 
+
         Sql2o sql2o = new Sql2o(connectionString, "moringa", "Access");
         Sql2oGeneralNews sql2oGeneralNews = new Sql2oGeneralNews(sql2o);
         Sql2oDepartment sql2oDepartment = new Sql2oDepartment(sql2o);
